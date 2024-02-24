@@ -1,9 +1,23 @@
+import './App.css'
+import Footer from "./components/Footer"
+import Header from "./components/Header"
+import ListEmployee from "./components/ListEmployee"
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import EmployeeComponent from './components/EmployeeComponent';
 
 function App() {
 
   return (
     <>
-      <h1 className="text-center">Hello World!</h1>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<ListEmployee />} />
+          <Route path="/employees" element={<ListEmployee />} />
+          <Route path="/add-employee" element={<EmployeeComponent />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </>
   )
 }
