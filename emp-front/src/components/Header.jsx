@@ -8,7 +8,7 @@ const Header = () => {
           <a
             className="navbar-brand"
             style={{ paddingLeft: "20px", fontFamily: 'Dancing Script, cursive' }}
-            href=""
+            href="/"
           >
             Employee Management System
           </a>

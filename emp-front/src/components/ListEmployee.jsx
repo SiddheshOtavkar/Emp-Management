@@ -16,7 +16,11 @@ const ListEmployee = () => {
     }, [])
 
     function addNewEmployee() {
-        navigate("/add-employee")
+        navigate("/add-employee");
+    }
+
+    function updateEmployee(id) {
+        navigate(`/update-employee/${id}`);
     }
 
     return (
@@ -33,6 +37,7 @@ const ListEmployee = () => {
                             <th scope='col'>First Name</th>
                             <th scope='col'>Last Name</th>
                             <th scope='col'>Email</th>
+                            <th scope='col'>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -42,6 +47,9 @@ const ListEmployee = () => {
                                 <td>{emp.firstName}</td>
                                 <td>{emp.lastName}</td>
                                 <td>{emp.email}</td>
+                                <td>
+                                    <button className='btn btn-info' onClick={() => updateEmployee(emp.id)}>Update</button>
+                                </td>
                             </tr>
                         )}
                     </tbody>
